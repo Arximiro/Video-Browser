@@ -32,6 +32,7 @@ export default {
           q: searchTerm
         }
       });
+      console.log(response);
       this.videos = response.data.items;
     }
   }
