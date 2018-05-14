@@ -23,3 +23,5 @@ new Vue({
 // when taking in props inside a child component, you create a key value pair, like props: ['videos'] naming off all the props you expect to be taking in.
 // it's possible to take in props in a way that does type checking, by instead having props: {videos: Array} for example
 //**see VideoList.vue component**
+
+// adding scoped to a style tag on a component makes it to where those styles only apply to that component
