@@ -1,40 +1,100 @@
 <template>
-  <div class="container">
-    <SearchBar @termChange="onTermChange"></SearchBar>
-    <VideoList :videos="videos"></VideoList>
+  <div class="app">
+    <h1 class="ct">YouTube API</h1>
+    <SearchBar class="sb" @termChange="onTermChange"></SearchBar>
+    <VideoList class="vl" @videoSelect="onVideoSelect" :videos="videos"></VideoList>
+    <VideoDetail class="vd" :video="selectedVideo"></VideoDetail>
+    <svg class="icon" v-if="selectedVideo">
+      <use href="/si-sprite.svg#si-logos-vue" />
+    </svg>
   </div>
 </template>
 
 
-<script>
-import axios from 'axios';
-import SearchBar from './components/SearchBar';
-import VideoList from './components/VideoList';
 
-const API_KEY = 'AIzaSyC5KS5ytOBbDakTfilVoAdD1EDrX7pW9f0';
+
+<script>
+import axios from "axios";
+import SearchBar from "./components/SearchBar";
+import VideoList from "./components/VideoList";
+import VideoDetail from "./components/VideoDetail";
+
+const API_KEY = "AIzaSyC5KS5ytOBbDakTfilVoAdD1EDrX7pW9f0";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     SearchBar,
-    VideoList
+    VideoList,
+    VideoDetail
   },
   data() {
-    return { videos: [] };
+    return { videos: [], selectedVideo: null };
   },
   methods: {
     async onTermChange(searchTerm) {
-      const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
-        params: {
-          key: API_KEY,
-          type: 'video',
-          part: 'snippet',
-          q: searchTerm
+      const response = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            key: API_KEY,
+            type: "video",
+            part: "snippet",
+            q: searchTerm
+          }
         }
-      });
+      );
       console.log(response);
       this.videos = response.data.items;
+    },
+    onVideoSelect(video) {
+      this.selectedVideo = video;
     }
   }
 };
 </script>
+
+
+
+
+<style lang="scss" scoped>
+.app {
+  border: 2rem solid #ddd;
+  border-radius: 1rem;
+  margin: 3rem;
+
+  display: grid;
+  grid-template-rows: 10vh min-content min-content;
+  grid-template-columns: 5fr 3fr;
+
+  & .ct {
+    padding-left: 1rem;
+
+    align-self: center;
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  & .sb {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+
+  & .vl {
+    margin: 0 1rem 1rem 1rem;
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+
+  & .vd {
+    grid-row: 2/4;
+    grid-column: 1/2;
+  }
+
+  & .icon {
+    height: 12rem;
+    grid-row: 3/4;
+    grid-column: 2/3;
+  }
+}
+</style>

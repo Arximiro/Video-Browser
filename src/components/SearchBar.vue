@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <input @input="onInput" />
-  </div>
+    <input class="input" placeholder="Search" @input="onInput" />
 </template>
 
 <script>
@@ -15,14 +13,18 @@ export default {
 };
 </script>
 
-<style scoped>
-input {
-  width: 75%;
-}
+<style lang="scss" scoped>
+  .input {
+    height: 3rem;
+    margin-left: 3rem;
+    width: 50%;
+    transition: all .5s;
 
-div {
-  text-align: center;
-  margin: 20px;
-}
+    justify-self: start;
+    align-self: center;
 
+    &:focus {
+      width: 75%;
+    }
+  }
 </style>
