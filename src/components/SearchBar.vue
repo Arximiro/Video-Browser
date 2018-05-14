@@ -1,5 +1,5 @@
 <template>
-    <input class="input" placeholder="Search" @input="onInput" />
+    <input class="input" placeholder="Search Videos" @input="onInput" />
 </template>
 
 <script>

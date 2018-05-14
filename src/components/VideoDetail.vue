@@ -7,7 +7,7 @@
     <h1>{{video.snippet.title}}</h1>
     <br>
     <p>{{video.snippet.description}}</p>
-    <h5>Published - {{video.snippet.publishedAt}}</h5>
+    <h5>Published - {{published}}</h5>
     </div>
   </div>
 </template>
@@ -16,12 +16,17 @@
 
 
 <script>
+import moment from 'moment';
+
 export default {
   name: "VideoDetail",
-  props: ["video"],  
+  props: ["video"],
   computed: {
     videoUrl() {
       return `https://www.youtube.com/embed/${this.video.id.videoId}`
+    },
+    published() {
+      return moment(this.video.snippet.publishedAt).format("MMM Do, YYYY");
     }
   }
 };

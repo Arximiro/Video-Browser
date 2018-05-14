@@ -4,7 +4,8 @@
     <SearchBar class="sb" @termChange="onTermChange"></SearchBar>
     <VideoList class="vl" @videoSelect="onVideoSelect" :videos="videos"></VideoList>
     <VideoDetail class="vd" :video="selectedVideo"></VideoDetail>
-    <img src="https://lonestone.consulting/images/tools/vuejs.png" alt="vueJS Logo" class="icon" v-if="selectedVideo">
+    <img src="./img/vuejs.png" alt="vueJS Logo" class="icon" v-if="selectedVideo">
+    <img src="./img/yt.png" alt="youtube logo" class="yt-logo" v-if="videos.length > 0 && !selectedVideo">
   </div>
 </template>
 
@@ -90,10 +91,33 @@ export default {
   }
 
   & .icon {
-    
     grid-row: 3/4;
     grid-column: 2/3;
     justify-self: center;
+  }
+
+  & .yt-logo {
+    animation: pulse 2s infinite;
+
+    grid-row: 2/3;
+    grid-column: 1/2;
+
+    @keyframes pulse {
+      from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+
+      50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+
+      to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+    }
   }
 }
 </style>
