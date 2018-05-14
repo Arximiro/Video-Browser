@@ -4,9 +4,7 @@
     <SearchBar class="sb" @termChange="onTermChange"></SearchBar>
     <VideoList class="vl" @videoSelect="onVideoSelect" :videos="videos"></VideoList>
     <VideoDetail class="vd" :video="selectedVideo"></VideoDetail>
-    <svg class="icon" v-if="selectedVideo">
-      <use href="/si-sprite.svg#si-logos-vue" />
-    </svg>
+    <img src="https://lonestone.consulting/images/tools/vuejs.png" alt="vueJS Logo" class="icon" v-if="selectedVideo">
   </div>
 </template>
 
@@ -92,9 +90,10 @@ export default {
   }
 
   & .icon {
-    height: 12rem;
+    
     grid-row: 3/4;
     grid-column: 2/3;
+    justify-self: center;
   }
 }
 </style>
