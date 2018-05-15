@@ -16,14 +16,14 @@
 
 
 <script>
-import moment from 'moment';
+import moment from "moment";
 
 export default {
   name: "VideoDetail",
   props: ["video"],
   computed: {
     videoUrl() {
-      return `https://www.youtube.com/embed/${this.video.id.videoId}`
+      return `https://www.youtube.com/embed/${this.video.id.videoId}`;
     },
     published() {
       return moment(this.video.snippet.publishedAt).format("MMM Do, YYYY");
@@ -36,18 +36,17 @@ export default {
 
 
 <style lang="scss" scoped>
-  .main {
-    border-radius: 4px;
-    margin: 0 1rem 0 1rem;
+.main {
+  padding: 1rem;
+  border-radius: 4px;
 
-    & .video {
-      height: 63vh;
-    }
-
-    & .detail {
-      padding: 1rem;
-      margin-top: 2rem;
-      height: 30vh;
-    }
+  & .video {
+    height: 63vh;
   }
+
+  & .detail {
+    padding-top: 1rem;
+    height: 30vh;
+  }
+}
 </style>

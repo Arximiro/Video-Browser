@@ -1,5 +1,5 @@
 <template>
-  <ul class="list-group">
+  <ul class="list-group" v-if="videos.length > 0">
     <VideoListItem
       @videoSelect="onVideoSelect"
       v-for="video in videos"
@@ -9,6 +9,9 @@
       </VideoListItem>
   </ul>
 </template>
+
+
+
 
 <script>
 import VideoListItem from "./VideoListItem";
@@ -21,12 +24,14 @@ export default {
   props: ["videos"],
   methods: {
     onVideoSelect(video) {
-      this.$emit('videoSelect', video);
+      this.$emit("videoSelect", video);
     }
   }
 };
 </script>
 
-<style>
 
+
+
+<style lang="scss" scoped>
 </style>

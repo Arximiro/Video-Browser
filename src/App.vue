@@ -80,7 +80,8 @@ export default {
   }
 
   & .vl {
-    margin: 0 1rem 1rem 1rem;
+    margin: 1rem;
+
     grid-row: 2/3;
     grid-column: 2/3;
   }
@@ -101,6 +102,7 @@ export default {
 
     grid-row: 2/3;
     grid-column: 1/2;
+    justify-self: center;
 
     @keyframes pulse {
       from {
@@ -118,6 +120,6 @@ export default {
         transform: scale3d(1, 1, 1);
       }
     }
-  }
+  }  
 }
 </style>

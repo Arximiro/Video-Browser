@@ -2,29 +2,35 @@
     <input class="input" placeholder="Search Videos" @input="onInput" />
 </template>
 
+
+
+
 <script>
 export default {
-  name: 'SearchBar',
+  name: "SearchBar",
   methods: {
     onInput(e) {
-      this.$emit('termChange', e.target.value);
+      this.$emit("termChange", e.target.value);
     }
   }
 };
 </script>
 
+
+
+
 <style lang="scss" scoped>
-  .input {
-    height: 3rem;
-    margin-left: 3rem;
-    width: 50%;
-    transition: all .5s;
+.input {
+  height: 3rem;
+  margin-left: 3rem;
+  width: 60%;
+  transition: all 0.5s;
 
-    justify-self: start;
-    align-self: center;
+  align-self: center;
+  justify-self: center;
 
-    &:focus {
-      width: 75%;
-    }
+  &:focus {
+    width: 75%;
   }
+}
 </style>

@@ -7,6 +7,9 @@
   </li>
 </template>
 
+
+
+
 <script>
 export default {
   name: "VideoListItem",
@@ -24,11 +27,14 @@ export default {
 };
 </script>
 
-<style scoped>
-li {
-  display: flex;
 
+
+
+<style lang="scss" scoped>
+li {
   cursor: pointer;
+
+  display: flex;
 }
 
 li:hover {
