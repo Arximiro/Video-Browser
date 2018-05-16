@@ -5,6 +5,7 @@ new Vue({
   render: h => h(App)
 }).$mount('#app');
 
+
 // ---Notes---
 // $mount('#app') is the same as doing el: '#app' basically
 // h here is a function known as createElement, but is just named h for shorthand. Which derives from the term hyperscript. You can name it w/e, Vue knows what it is

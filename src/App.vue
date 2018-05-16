@@ -18,6 +18,7 @@ import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetail from "./components/VideoDetail";
 
+
 const API_KEY = "AIzaSyC5KS5ytOBbDakTfilVoAdD1EDrX7pW9f0";
 
 export default {
@@ -57,6 +58,8 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "./sass/abstracts/mixins.scss";
+
 .app {
   border: 2rem solid #ddd;
   border-radius: 1rem;
@@ -120,6 +123,6 @@ export default {
         transform: scale3d(1, 1, 1);
       }
     }
-  }  
+  }
 }
 </style>
