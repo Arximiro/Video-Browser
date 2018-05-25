@@ -18,7 +18,6 @@ import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetail from "./components/VideoDetail";
 
-
 const API_KEY = "AIzaSyC5KS5ytOBbDakTfilVoAdD1EDrX7pW9f0";
 
 export default {
@@ -69,17 +68,33 @@ export default {
   grid-template-rows: 10vh min-content min-content;
   grid-template-columns: 5fr 3fr;
 
+  @include respond(tab-land) {
+    grid-template-rows: 10vh repeat(4, min-content);
+    grid-template-columns: 100%;
+  }
+
   & .ct {
     padding-left: 1rem;
 
     align-self: center;
     grid-row: 1/2;
     grid-column: 1/2;
+
+    @include respond(tab-land) {
+      grid-column: 1;
+    }
   }
 
   & .sb {
     grid-row: 1/2;
     grid-column: 2/3;
+
+    @include respond(tab-land) {
+      margin-right: 1rem;
+
+      grid-column: 1;
+      justify-self: end;
+    }
   }
 
   & .vl {
@@ -87,17 +102,31 @@ export default {
 
     grid-row: 2/3;
     grid-column: 2/3;
+
+    @include respond(tab-land) {
+      grid-column: 1;
+    }
   }
 
   & .vd {
     grid-row: 2/4;
     grid-column: 1/2;
+
+    @include respond(tab-land) {
+      grid-row: 3/5;
+      grid-column: 1;
+    }
   }
 
   & .icon {
     grid-row: 3/4;
     grid-column: 2/3;
     justify-self: center;
+
+    @include respond(tab-land) {
+      grid-row: 5/6;
+      grid-column: 1;
+    }
   }
 
   & .yt-logo {
@@ -106,6 +135,11 @@ export default {
     grid-row: 2/3;
     grid-column: 1/2;
     justify-self: center;
+
+    @include respond(tab-land) {
+      grid-row: 3/4;
+      grid-column: 1;
+    }
 
     @keyframes pulse {
       from {

@@ -20,6 +20,8 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "../sass/abstracts/mixins.scss";
+
 .input {
   height: 3rem;
   margin-left: 3rem;
@@ -29,8 +31,16 @@ export default {
   align-self: center;
   justify-self: center;
 
+  @include respond(tab-land) {
+    width: 50%;
+  }
+
   &:focus {
     width: 75%;
+
+    @include respond(tab-land) {
+      width: 60%;
+    }
   }
 }
 </style>
