@@ -69,23 +69,34 @@ export default {
   grid-template-columns: 5fr 3fr;
 
   @include respond(tab-land) {
-    grid-template-rows: 10vh repeat(4, min-content);
+    grid-template-rows: 10vh repeat(4, max-content);
     grid-template-columns: 100%;
+  }
+
+  @include respond(tab-port) {
+    grid-template-rows: 10vh 10vh repeat(4, max-content);
   }
 
   & .ct {
     padding-left: 1rem;
 
     align-self: center;
+
     grid-row: 1/2;
     grid-column: 1/2;
 
     @include respond(tab-land) {
       grid-column: 1;
     }
+
+    @include respond(tab-port) {
+      justify-self: center;
+    }
   }
 
   & .sb {
+    align-self: center;
+    justify-self: center;
     grid-row: 1/2;
     grid-column: 2/3;
 
@@ -94,6 +105,14 @@ export default {
 
       grid-column: 1;
       justify-self: end;
+    }
+
+    @include respond(tab-port) {
+      margin: 0;
+
+      grid-row: 2;
+      grid-column: 1;
+      justify-self: center;
     }
   }
 
@@ -106,6 +125,10 @@ export default {
     @include respond(tab-land) {
       grid-column: 1;
     }
+
+    @include respond(tab-port) {
+      grid-row: 3/4;
+    }
   }
 
   & .vd {
@@ -115,6 +138,10 @@ export default {
     @include respond(tab-land) {
       grid-row: 3/5;
       grid-column: 1;
+    }
+
+    @include respond(tab-port) {
+      grid-row: 4/6;
     }
   }
 
@@ -126,6 +153,10 @@ export default {
     @include respond(tab-land) {
       grid-row: 5/6;
       grid-column: 1;
+    }
+
+    @include respond(tab-port) {
+      grid-row: 6/7;
     }
   }
 
@@ -139,6 +170,10 @@ export default {
     @include respond(tab-land) {
       grid-row: 3/4;
       grid-column: 1;
+    }
+
+    @include respond(tab-port) {
+      grid-row: 4/5;
     }
 
     @keyframes pulse {

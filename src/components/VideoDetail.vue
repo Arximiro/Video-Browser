@@ -36,17 +36,26 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "../sass/abstracts/mixins.scss";
+
 .main {
   padding: 1rem;
-  border-radius: 4px;
 
   & .video {
     height: 63vh;
+
+    @include respond(tab-port) {
+      height: 40vh;
+    }
   }
 
   & .detail {
     padding-top: 1rem;
     height: 30vh;
+  }
+
+  @include respond(tab-port) {
+    font-size: 85%;
   }
 }
 </style>
