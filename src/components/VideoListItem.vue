@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     onVideoSelect() {
-      this.$emit('videoSelect', this.video);
+      this.$emit("videoSelect", this.video);
     }
   }
 };
@@ -31,10 +31,24 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "../sass/abstracts/mixins.scss";
+
 li {
   cursor: pointer;
 
   display: flex;
+
+  @include respond(phone) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & div {
+    @include respond(phone) {
+      padding-top: .5rem;
+      font-size: 85%;
+    }
+  }
 }
 
 li:hover {

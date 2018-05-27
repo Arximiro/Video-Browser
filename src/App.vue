@@ -158,6 +158,11 @@ export default {
     @include respond(tab-port) {
       grid-row: 6/7;
     }
+
+    @include respond(phone) {
+      height: 70%;
+      align-self: center;
+    }
   }
 
   & .yt-logo {
@@ -173,7 +178,14 @@ export default {
     }
 
     @include respond(tab-port) {
+      height: 80%;
+
+      align-self: center;
       grid-row: 4/5;
+    }
+
+    @include respond(phone) {
+      height: 45%;
     }
 
     @keyframes pulse {

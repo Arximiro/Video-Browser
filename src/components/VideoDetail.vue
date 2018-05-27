@@ -41,21 +41,39 @@ export default {
 .main {
   padding: 1rem;
 
+  @include respond(tab-port) {
+    font-size: 85%;
+  }
+
+  @include respond(phone) {
+    font-size: 70%;
+  }
+
+  & h1 {
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
+  }
+
   & .video {
     height: 63vh;
 
     @include respond(tab-port) {
       height: 40vh;
     }
+
+    @include respond(phone) {
+      height: 30vh;
+    }
   }
 
   & .detail {
     padding-top: 1rem;
     height: 30vh;
-  }
-
-  @include respond(tab-port) {
-    font-size: 85%;
   }
 }
 </style>
