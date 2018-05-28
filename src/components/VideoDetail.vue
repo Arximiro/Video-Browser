@@ -49,6 +49,10 @@ export default {
     font-size: 70%;
   }
 
+  @include respond(phone) {
+    font-size: 60%;
+  }
+
   & h1 {
     @include respond(tab-port) {
       font-size: 2rem;
@@ -56,6 +60,16 @@ export default {
 
     @include respond(phone) {
       font-size: 1.5rem;
+    }
+
+    @include respond(small-phone) {
+      font-size: 1rem;
+    }
+  }
+
+  & h5 {
+    @include respond(small-phone) {
+      font-size: 0.8rem;
     }
   }
 
@@ -69,11 +83,19 @@ export default {
     @include respond(phone) {
       height: 30vh;
     }
+
+    @include respond(small-phone) {
+      height: 20vh;
+    }
   }
 
   & .detail {
     padding-top: 1rem;
     height: 30vh;
+
+    @include respond(small-phone) {
+      height: 40vh;
+    }
   }
 }
 </style>

@@ -151,6 +151,8 @@ export default {
     justify-self: center;
 
     @include respond(tab-land) {
+      padding-top: 3rem;
+
       grid-row: 5/6;
       grid-column: 1;
     }
@@ -160,8 +162,13 @@ export default {
     }
 
     @include respond(phone) {
+      padding-top: 1rem;
       height: 70%;
       align-self: center;
+    }
+
+    @include respond(small-phone) {
+      height: 50%;      
     }
   }
 
