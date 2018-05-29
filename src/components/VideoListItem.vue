@@ -49,6 +49,12 @@ li {
       font-size: 85%;
     }
   }
+
+  & img {
+    @include respond(small-phone) {
+      display: none;
+    }
+  }
 }
 
 li:hover {

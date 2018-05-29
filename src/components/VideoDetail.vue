@@ -93,8 +93,10 @@ export default {
     padding-top: 1rem;
     height: 30vh;
 
-    @include respond(small-phone) {
-      height: 40vh;
+    & p {
+      @include respond(small-phone) {
+        display: none;
+      }
     }
   }
 }

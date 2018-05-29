@@ -77,6 +77,10 @@ export default {
     grid-template-rows: 10vh 10vh repeat(4, max-content);
   }
 
+  @include respond(phone) {
+    border: 2px solid black;
+  }
+
   & .ct {
     padding-left: 1rem;
 
@@ -90,7 +94,13 @@ export default {
     }
 
     @include respond(tab-port) {
+      padding: 0;
+
       justify-self: center;
+    }
+
+    @include respond(small-phone) {
+      font-size: 1.5rem;
     }
   }
 
@@ -113,6 +123,10 @@ export default {
       grid-row: 2;
       grid-column: 1;
       justify-self: center;
+    }
+
+    @include respond(small-phone) {
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -168,7 +182,7 @@ export default {
     }
 
     @include respond(small-phone) {
-      height: 50%;      
+      display: none;
     }
   }
 
@@ -193,6 +207,10 @@ export default {
 
     @include respond(phone) {
       height: 45%;
+    }
+
+    @include respond(small-phone) {
+      display: none;
     }
 
     @keyframes pulse {
